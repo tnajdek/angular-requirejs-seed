@@ -6,8 +6,6 @@ require.config({
 		fixtures: '/base/test/unit/fixtures'
 
 	},
-	// files are served from /base
-	// https://github.com/testacular/testacular/wiki/RequireJS
 	baseUrl: '/base/app/js',
 	shim: {
 		'angular' : {'exports' : 'angular'},
@@ -26,5 +24,5 @@ require( [
 	'/base/test/unit.js' //list all your unit files here
 
 ], function(angular, app, routes) {
-		window.__testacular__.start();
+		window.__karma__.start();
 });

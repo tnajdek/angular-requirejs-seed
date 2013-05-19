@@ -1,7 +1,7 @@
 basePath = '../';
 
 files = [
-  ANGULAR_SCENARIO,
+  'test/lib/angular/angular-scenario.js',
   ANGULAR_SCENARIO_ADAPTER,
   'test/e2e/**/*.js'
 ];
@@ -16,7 +16,7 @@ proxies = {
   '/': 'http://localhost:8000/'
 };
 
-urlRoot = "__testacular__";
+urlRoot = "__karma__";
 
 junitReporter = {
   outputFile: 'test_out/e2e.xml',
