@@ -1,6 +1,6 @@
 require.config({
 	paths: {
-		jquery: 'lib/jquery/jquery-1.9.1',
+		jquery: 'lib/jquery/jquery',
 		angular: 'lib/angular/angular',
 		text: 'lib/require/text'
 	},
