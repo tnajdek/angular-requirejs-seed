@@ -4,7 +4,6 @@ This is a fork of [Angular Seed](https://github.com/angular/angular-seed) but wi
 
 * AngularJS 1.0.7
 * RequireJS 2.1.6
-* jQuery 1.10.0 (optional, see below)
 * Full support for unit and e2e tests
 * Support for Karma Test Runner (formerly Testacular)
 
@@ -12,7 +11,6 @@ This is a fork of [Angular Seed](https://github.com/angular/angular-seed) but wi
 
 * To run e2e tests, you need to have a server running, you could run`scripts/web-server.js` from the root folder of this repository to get one.
 * There are 2 very similar files bootstraping the app named `main.js` and `main-test.js`. Latter is used only for unit testing where we still use RequireJS (so all your `define` and `require` works) but we don't attach our app to the DOM. 
-* jQuery has been included in the codebase but currently is used in only one place in `main.js`. Since we're using RequireJS, we can't bootstrap Angular using declarative method in HTML. A little trick is to add a relevant css class to the HTML after all required JS code has been downloaded. Hence if you don't want to use jQuery, all you really need is a reliable method of catching document ready event and attaching a css class to node in DOM.
 * App has been divided into separate files to hold controllers, filters, directives and services separately. These are all defined as separated Angular modules. In this example all these are required to run the main app but in real-world scenario it's likely that you will have modules that are not needed for certain parts of the applications - use requireJS to load them only as and when needed.
 
 

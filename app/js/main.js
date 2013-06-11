@@ -1,6 +1,5 @@
 require.config({
 	paths: {
-		jquery: 'lib/jquery/jquery',
 		angular: 'lib/angular/angular',
 		text: 'lib/require/text'
 	},
@@ -15,19 +14,18 @@ require.config({
 });
 
 require( [
-	'jquery',
 	'angular',
 	'app',
 	'routes'
-], function($, angular, app, routes) {
+], function(angular, app, routes) {
 	'use strict';
-	$(document).ready(function () {
-		var $html = $('html');
-		angular.bootstrap($html, [app['name']]);
+		angular.bootstrap(document, [app['name']]);
 		// Because of RequireJS we need to bootstrap the app app manually
 		// and Angular Scenario runner won't be able to communicate with our app
-		// unless we explicitely mark the container as app holder
+		// unless we explicitly mark the container as app holder
+		
+		// You must have ng-app specified in your in your .html file (eg. <html ng-app > )
+		// In order for Karma to run the tests
+		
 		// More info: https://groups.google.com/forum/#!msg/angular/yslVnZh9Yjk/MLi3VGXZLeMJ
-		$html.addClass('ng-app');
-	});
 });
