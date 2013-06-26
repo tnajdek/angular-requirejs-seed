@@ -3,7 +3,7 @@ require.config({
 		angular: 'lib/angular/angular',
 		text: 'lib/require/text'
 	},
-	baseUrl: '/app/js',
+	baseUrl: 'app/js',
 	shim: {
 		'angular' : {'exports' : 'angular'},
 		'angularMocks': {deps:['angular'], 'exports':'angular.mock'}
