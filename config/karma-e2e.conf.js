@@ -1,24 +1,27 @@
-basePath = '../';
+module.exports = function(config) {
+  config.set({
+    basePath: '../',
 
-files = [
-  'test/lib/angular/angular-scenario.js',
-  ANGULAR_SCENARIO_ADAPTER,
-  'test/e2e/**/*.js'
-];
+    files: [
+      'test/lib/angular/angular-scenario.js',
+      'test/e2e/**/*.js'
+    ],
 
-autoWatch = false;
+    autoWatch: false,
 
-browsers = ['Firefox'];
+    browsers: ['Firefox'],
 
-singleRun = true;
+    singleRun: true,
 
-proxies = {
-  '/': 'http://localhost:8000/'
-};
+    proxies: {
+      '/': 'http://localhost:8000/'
+    },
 
-urlRoot = "__karma__";
+    urlRoot: "__karma__",
 
-junitReporter = {
-  outputFile: 'test_out/e2e.xml',
-  suite: 'e2e'
+    junitReporter: {
+      outputFile: 'test_out/e2e.xml',
+      suite: 'e2e'
+    }
+  });
 };

@@ -1,27 +1,27 @@
-basePath = '../';
+module.exports = function(config) {
+  config.set({
+    basePath: '../',
+    frameworks: ['jasmine', 'requirejs'],
+    files: [
+      {pattern: 'app/js/*.js', included: false},
+      {pattern: 'app/js/**/*.js', included: false},
+      {pattern: 'test/unit.js', included: false},
+      {pattern: 'test/unit/*.js', included: false},
+      {pattern: 'test/unit/**/*.js', included: false},
+      {pattern: 'test/lib/**/*.js', included: false},
+      // needs to be last http://karma-runner.github.io/0.10/plus/requirejs.html
+      'test/main-test.js'
+  ],
 
-files = [
-  JASMINE,
-  JASMINE_ADAPTER,
-  REQUIRE,
-  REQUIRE_ADAPTER,
-  {pattern: 'app/js/*.js', included: false},
-  {pattern: 'app/js/**/*.js', included: false},
-  {pattern: 'test/unit.js', included: false},
-  {pattern: 'test/unit/*.js', included: false},
-  {pattern: 'test/unit/**/*.js', included: false},
-  {pattern: 'test/lib/**/*.js', included: false},
-  // needs to be last https://github.com/testacular/testacular/wiki/RequireJS
-  'test/main-test.js'
-];
+  autoWatch: true,
 
-autoWatch = true;
+  LogLevel: LOG_DEBUG,
 
-LogLevel = LOG_DEBUG;
+  browsers: ['Firefox'],
 
-browsers = ['Firefox'];
-
-junitReporter = {
-  outputFile: 'test_out/unit.xml',
-  suite: 'unit'
+  junitReporter: {
+    outputFile: 'test_out/unit.xml',
+    suite: 'unit'
+  }
+  });
 };
