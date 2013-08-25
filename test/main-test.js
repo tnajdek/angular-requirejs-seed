@@ -1,3 +1,4 @@
+// we get all the test files automatically
 var tests = [];
 for (var file in window.__karma__.files) {
 	if (window.__karma__.files.hasOwnProperty(file)) {
