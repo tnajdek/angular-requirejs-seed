@@ -1,17 +1,26 @@
 require.config({
 	paths: {
-		angular: 'lib/angular/angular',
-		text: 'lib/require/text'
+		angular: '../../bower_components/angular/angular',
+		angularRoute: '../../bower_components/angular-route/angular-route',
+		angularMocks: '../../bower_components/angular-mocks/angular-mocks',
+		text: '../../bower_components/requirejs-text/text'
 	},
 	baseUrl: 'app/js',
 	shim: {
 		'angular' : {'exports' : 'angular'},
-		'angularMocks': {deps:['angular'], 'exports':'angular.mock'}
+		'angularRoute': ['angular'],
+		'angularMocks': {
+			deps:['angular'],
+			'exports':'angular.mock'
+		}
 	},
 	priority: [
 		"angular"
 	]
 });
+
+// hey Angular, we're bootstrapping manually!
+window.name = "NG_DEFER_BOOTSTRAP!";
 
 require( [
 	'angular',
@@ -19,5 +28,10 @@ require( [
 	'routes'
 ], function(angular, app, routes) {
 	'use strict';
-		angular.bootstrap(document, [app['name']]);
+	var $html = angular.element(document.getElementsByTagName('html')[0]);
+
+	angular.element().ready(function() {
+		$html.addClass('ng-app');
+		angular.bootstrap($html, [app['name']]);
+	});
 });

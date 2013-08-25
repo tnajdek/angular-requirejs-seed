@@ -1,28 +1,30 @@
+var tests = [];
+for (var file in window.__karma__.files) {
+	if (window.__karma__.files.hasOwnProperty(file)) {
+		if (/Spec\.js$/.test(file)) {
+			tests.push(file);
+		}
+	}
+}
+
 require.config({
 	paths: {
-		angular: 'lib/angular/angular',
-		angularMocks: '/base/test/lib/angular/angular-mocks',
-		text: 'lib/require/text',
+		angular: '/base/bower_components/angular/angular',
+		angularRoute: '/base/bower_components/angular-route/angular-route',
+		angularMocks: '/base/bower_components/angular-mocks/angular-mocks',
+		text: '/base/bower_components/requirejs-text/text',
 		fixtures: '/base/test/unit/fixtures'
 
 	},
 	baseUrl: '/base/app/js',
 	shim: {
 		'angular' : {'exports' : 'angular'},
-		'angularMocks': {deps:['angular'], 'exports':'angular.mock'}
+		'angularRoute': ['angular'],
+		'angularMocks': {
+			deps:['angular'],
+			'exports':'angular.mock'
+		}
 	},
-	priority: [
-		"angular"
-	]
-});
-
-require( [
-	'angular',
-	'app',
-	'routes',
-	'angularMocks',
-	'/base/test/unit.js' //list all your unit files here
-
-], function(angular, app, routes) {
-		window.__karma__.start();
+	deps: tests,
+	callback: window.__karma__.start
 });

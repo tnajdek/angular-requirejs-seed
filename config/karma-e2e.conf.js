@@ -1,17 +1,16 @@
 module.exports = function(config) {
   config.set({
     basePath: '../',
-
+    frameworks: ['ng-scenario'],
     files: [
-      'test/lib/angular/angular-scenario.js',
       'test/e2e/**/*.js'
     ],
 
-    autoWatch: false,
+    autoWatch: true,
 
     browsers: ['Firefox'],
 
-    singleRun: true,
+    singleRun: false,
 
     proxies: {
       '/': 'http://localhost:8000/'
