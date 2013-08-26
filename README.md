@@ -13,6 +13,30 @@ This is a fork of [Angular Seed](https://github.com/angular/angular-seed) but wi
 * There are 2 very similar files bootstraping the app named `main.js` and `main-test.js`. Latter is used only for unit testing where we still use RequireJS (so all your `define` and `require` works) but we don't attach our app to the DOM. 
 * App has been divided into separate files to hold controllers, filters, directives and services separately. These are all defined as separated Angular modules. In this example all these are required to run the main app but in real-world scenario it's likely that you will have modules that are not needed for certain parts of the applications - use requireJS to load them only as and when needed.
 
+## Installation
+
+    git clone git@github.com:tnajdek/angular-requirejs-seed.git
+    cd angular-requirejs-seed
+    npm install
+    bower install
+
+## Running
+
+    # Serve static files using your own web server or run
+    scripts/web-server.js
+
+## Testing
+
+    # Run unit tests automatically whenever app changes
+    scripts/test.sh
+
+    # Run end to end tests (requires web server to be running)
+    #script/e2e-test.sh
+
+To run e2e tests you can also point your browser to:
+
+    http://localhost:8000/test/e2e/runner.html
+
 
 Documentation from the original repo untouched
 ----------------------------------------------
