@@ -6,11 +6,11 @@ module.exports = function(config) {
 			'test/e2e/**/*.js'
 		],
 
-		autoWatch: true,
+		autoWatch: false,
 
 		browsers: ['Firefox'],
 
-		singleRun: false,
+		singleRun: true,
 
 		proxies: {
 			'/': 'http://localhost:8000/'
