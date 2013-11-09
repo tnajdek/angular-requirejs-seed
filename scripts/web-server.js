@@ -7,8 +7,6 @@ var util = require('util'),
     events = require('events');
 
 var DEFAULT_PORT = 8000;
-var indexFilenamePattern = /index\.html/;
-
 
 function main(argv) {
   new HttpServer({
@@ -102,7 +100,7 @@ StaticServlet.prototype.handleRequest = function(req, res) {
       return self.sendDirectory_(req, res, path);
     return self.sendFile_(req, res, path);
   });
-};
+}
 
 StaticServlet.prototype.sendError_ = function(req, res, error) {
   res.writeHead(500, {
@@ -202,19 +200,15 @@ StaticServlet.prototype.sendDirectory_ = function(req, res, path) {
 
     var remaining = files.length;
     files.forEach(function(fileName, index) {
-      if(fileName.match(indexFilenamePattern)) {
-        self.sendFile_(req, res, path+fileName);
-      } else {
-        fs.stat(path + '/' + fileName, function(err, stat) {
-          if (err)
-            return self.sendError_(req, res, err);
-          if (stat.isDirectory()) {
-            files[index] = fileName + '/';
-          }
-          if (!(--remaining))
-            return self.writeDirectoryIndex_(req, res, path, files);
-        });
-      }
+      fs.stat(path + '/' + fileName, function(err, stat) {
+        if (err)
+          return self.sendError_(req, res, err);
+        if (stat.isDirectory()) {
+          files[index] = fileName + '/';
+        }
+        if (!(--remaining))
+          return self.writeDirectoryIndex_(req, res, path, files);
+      });
     });
   });
 };
