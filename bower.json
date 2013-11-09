@@ -9,11 +9,11 @@
     "tests"
   ],
   "devDependencies": {
-    "angular": "~1.2.0-rc.1",
-    "angular-scenario": "~1.2.0-rc.1",
-    "angular-route": "~1.2.0-rc.1",
-    "angular-mocks": "~1.2.0-rc.1",
-    "requirejs": "~2.1.8",
+    "angular": "~1.2.0",
+    "angular-scenario": "~1.2.0",
+    "angular-route": "~1.2.0",
+    "angular-mocks": "~1.2.0",
+    "requirejs": "~2.1.9",
     "requirejs-text": "~2.0.10"
   }
 }
