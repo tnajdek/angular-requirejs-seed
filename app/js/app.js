@@ -5,7 +5,7 @@ define([
 	'directives',
 	'controllers',
 	'angularRoute',
-	], function (angular, filters, services, directives, controllers) {
+	], function (angular) {
 		'use strict';
 
 		// Declare app level module which depends on filters, and services
