@@ -25,10 +25,8 @@ require( [
 	'routes'
 ], function(angular, app, routes) {
 	'use strict';
-	var $html = angular.element(document.getElementsByTagName('html')[0]);
-
 	angular.element().ready(function() {
-		$html.addClass('ng-app');
+		var $html = document.getElementsByTagName('html')[0];
 		angular.bootstrap($html, [app['name']]);
 	});
 });
