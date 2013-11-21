@@ -6,7 +6,7 @@
 describe('My Application', function() {
 	beforeEach(function() {
 		browser().navigateTo('/');
-		sleep(0.5);
+		sleep(1);
 	});
 
 
@@ -17,7 +17,7 @@ describe('My Application', function() {
 	describe('View 1', function() {
 		beforeEach(function() {
 			browser().navigateTo('#/view1');
-			sleep(0.5);
+			sleep(1);
 		});
 
 		it('should...', function() {
