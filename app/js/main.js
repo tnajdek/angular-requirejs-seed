@@ -5,7 +5,6 @@ require.config({
 		angularMocks: '../../bower_components/angular-mocks/angular-mocks',
 		text: '../../bower_components/requirejs-text/text'
 	},
-	baseUrl: 'app/js',
 	shim: {
 		'angular' : {'exports' : 'angular'},
 		'angularRoute': ['angular'],
