@@ -15,7 +15,7 @@ module.exports = function(config) {
 
 	autoWatch: true,
 
-	LogLevel: LOG_DEBUG,
+	LogLevel: config.LOG_DEBUG,
 
 	browsers: ['Firefox'],
 
