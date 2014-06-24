@@ -11,7 +11,7 @@
     "test",
     "tests"
   ],
-  "devDependencies": {
+  "dependencies": {
     "angular": "~1.2.1",
     "angular-route": "~1.2.1",
     "angular-scenario": "~1.2.1",
