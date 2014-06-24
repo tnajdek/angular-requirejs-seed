@@ -1,6 +1,7 @@
 {
   "name": "angular-requirejs-seed",
   "version": "0.2.0",
+  "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",
