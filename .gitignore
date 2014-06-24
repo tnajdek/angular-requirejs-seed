@@ -1,4 +1,7 @@
-## MAC OS X
+logs/*
+!.gitkeep
+node_modules/
+bower_components/
+tmp
 .DS_Store
-bower_components
-node_modules
+.idea
