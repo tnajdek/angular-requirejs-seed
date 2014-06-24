@@ -2,18 +2,18 @@
 	"name": "angular-requirejs-seed",
 	"version": "0.2.0",
 	"description": "AngularJS seed project modified for requireJS support.",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/tnajdek/angular-requirejs-seed.git"
+	},
+	"license": "MIT",
 	"directories": {
 		"test": "test"
 	},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/tnajdek/angular-requirejs-seed.git"
-	},
 	"author": "Tom Najdek <tom@doppnet.com>",
-	"license": "MIT",
 	"readmeFilename": "README.md",
 	"gitHead": "22263bfe493ebc74437c80fc4b4d37c24d1aa6f4",
 	"devDependencies": {
