@@ -31,11 +31,15 @@ This is a fork of [Angular Seed](https://github.com/angular/angular-seed) but wi
     scripts/test.sh
 
     # Run end to end tests (requires web server to be running)
-    #script/e2e-test.sh
+    #scripts/e2e-test.sh
 
 To run e2e tests you can also point your browser to:
 
     http://localhost:8000/test/e2e/runner.html
+
+## Troubleshooting
+
+If you experience `The package karma does not satisfy its siblings' peerDependencies requirements` problem after updating seed repo, remove `node_modules` and running `npm install && bower install`.
 
 
 Documentation from the original repo untouched
