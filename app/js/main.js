@@ -1,9 +1,11 @@
+'use strict';
+
 require.config({
 	paths: {
-		angular: '../../bower_components/angular/angular',
-		angularRoute: '../../bower_components/angular-route/angular-route',
-		angularMocks: '../../bower_components/angular-mocks/angular-mocks',
-		text: '../../bower_components/requirejs-text/text'
+		angular: '../bower_components/angular/angular',
+		angularRoute: '../bower_components/angular-route/angular-route',
+		angularMocks: '../bower_components/angular-mocks/angular-mocks',
+		text: '../bower_components/requirejs-text/text'
 	},
 	shim: {
 		'angular' : {'exports' : 'angular'},
@@ -26,7 +28,6 @@ require( [
 	'app',
 	'routes'
 ], function(angular, app, routes) {
-	'use strict';
 	var $html = angular.element(document.getElementsByTagName('html')[0]);
 
 	angular.element().ready(function() {

@@ -10,10 +10,10 @@ for (var file in window.__karma__.files) {
 
 require.config({
 	paths: {
-		angular: '/base/bower_components/angular/angular',
-		angularRoute: '/base/bower_components/angular-route/angular-route',
-		angularMocks: '/base/bower_components/angular-mocks/angular-mocks',
-		text: '/base/bower_components/requirejs-text/text',
+		angular: '/base/app/bower_components/angular/angular',
+		angularRoute: '/base/app/bower_components/angular-route/angular-route',
+		angularMocks: '/base/app/bower_components/angular-mocks/angular-mocks',
+		text: '/base/app/bower_components/requirejs-text/text',
 		fixtures: '/base/test/unit/fixtures'
 
 	},
