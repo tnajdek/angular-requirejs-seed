@@ -39,7 +39,7 @@ To run e2e tests you can also point your browser to:
 
 ## Troubleshooting
 
-If you experience `The package karma does not satisfy its siblings' peerDependencies requirements` problem after updating seed repo, remove `node_modules` and running `npm install && bower install`.
+If you experience `The package karma does not satisfy its siblings' peerDependencies requirements` problem after updating seed repo, remove `node_modules` before running `npm install && bower install`.
 
 
 Documentation from the original repo untouched
