@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
+	<link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
+	<script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+	<title>My AngularJS App</title>
+	<link rel="stylesheet" href="app.css">
+</head>
+<body ng-cloak>
+	<ul class="menu">
+		<li><a href="#/view1">view1</a></li>
+		<li><a href="#/view2">view2</a></li>
+	</ul>
+
+	<div ng-view></div>
+
+	<div>Angular seed app: v<span app-version></span></div>
+	<script data-main="require-config" src="bower_components/requirejs/require.js"></script>
+</body>
+</html>

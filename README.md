@@ -1,89 +1,33 @@
 # About
 
-This is a fork of [Angular Seed](https://github.com/angular/angular-seed) but with changes needed for requireJS support.
+This is a fork of [Angular Seed](https://github.com/angular/angular-seed) but with full RequireJS support.
 
-* AngularJS 1.2.18
-* RequireJS 2.1.14
-* Full support for unit and e2e tests
-* Support for Karma Test Runner 0.10+ (formerly Testacular)
+* AngularJS 1.3.x (1.4.x might work)
+* RequireJS 2.1.x
+* Full support for unit tests using Karma
+* Full support for e2e tests using Protractor
 
 ## Changes 
 
-* To run e2e tests, you need to have a server running, you could run`scripts/web-server.js` from the root folder of this repository to get one.
-* There are 2 very similar files bootstraping the app named `main.js` and `main-test.js`. Latter is used only for unit testing where we still use RequireJS (so all your `define` and `require` works) but we don't attach our app to the DOM. 
-* App has been divided into separate files to hold controllers, filters, directives and services separately. These are all defined as separated Angular modules. In this example all these are required to run the main app but in real-world scenario it's likely that you will have modules that are not needed for certain parts of the applications - use requireJS to load them only as and when needed.
+* Bootstraping file (`require-config.js`) is used for both unit testing and bootstraping on the actual page. If you don't plan to build your sources using `r.js`, you should consider removing logic related to Karma before using this file in production. 
 
 ## Installation
 
     git clone git@github.com:tnajdek/angular-requirejs-seed.git
     cd angular-requirejs-seed
     npm install
-    bower install
 
 ## Running
 
-    # Serve static files using your own web server or run
-    scripts/web-server.js
+    npm start
 
 ## Testing
 
     # Run unit tests automatically whenever app changes
-    scripts/test.sh
+    npm test
 
     # Run end to end tests (requires web server to be running)
-    #scripts/e2e-test.sh
-
-To run e2e tests you can also point your browser to:
-
-    http://localhost:8000/test/e2e/runner.html
-
-## Troubleshooting
-
-If you experience `The package karma does not satisfy its siblings' peerDependencies requirements` problem after updating seed repo, remove `node_modules` before running `npm install && bower install`.
-
-
-Documentation from the original repo untouched
-----------------------------------------------
-
-# About
-
-This is a fork of [Angular Seed](https://github.com/angular/angular-seed) but with changes needed for requireJS support.
-
-* AngularJS 1.2.1
-* RequireJS 2.1.9
-* Full support for unit and e2e tests
-* Support for Karma Test Runner 0.10+ (formerly Testacular)
-
-## Changes 
-
-* To run e2e tests, you need to have a server running, you could run`scripts/web-server.js` from the root folder of this repository to get one.
-* There are 2 very similar files bootstraping the app named `main.js` and `main-test.js`. Latter is used only for unit testing where we still use RequireJS (so all your `define` and `require` works) but we don't attach our app to the DOM. 
-* App has been divided into separate files to hold controllers, filters, directives and services separately. These are all defined as separated Angular modules. In this example all these are required to run the main app but in real-world scenario it's likely that you will have modules that are not needed for certain parts of the applications - use requireJS to load them only as and when needed.
-
-## Installation
-
-    git clone git@github.com:tnajdek/angular-requirejs-seed.git
-    cd angular-requirejs-seed
-    npm install
-    bower install
-
-## Running
-
-    # Serve static files using your own web server or run
-    scripts/web-server.js
-
-## Testing
-
-    # Run unit tests automatically whenever app changes
-    scripts/test.sh
-
-    # Run end to end tests (requires web server to be running)
-    #script/e2e-test.sh
-
-To run e2e tests you can also point your browser to:
-
-    http://localhost:8000/test/e2e/runner.html
-
+    npm run protractor
 
 Documentation from the original repo untouched
 ----------------------------------------------
@@ -106,7 +50,7 @@ To get you started you can simply clone the angular-seed repository and install 
 
 ### Prerequisites
 
-You need git to clone the angular-seed repository. You can get it from
+You need git to clone the angular-seed repository. You can get git from
 [http://git-scm.com/](http://git-scm.com/).
 
 We also use a number of node.js tools to initialize and test angular-seed. You must have node.js and
@@ -120,6 +64,14 @@ Clone the angular-seed repository using [git][git]:
 git clone https://github.com/angular/angular-seed.git
 cd angular-seed
 ```
+
+If you just want to start a new project without the angular-seed commit history then you can do:
+
+```bash
+git clone --depth=1 https://github.com/angular/angular-seed.git <your-project-name>
+```
+
+The `depth=1` tells git to only pull down one commit worth of historical data.
 
 ### Install Dependencies
 
@@ -160,33 +112,33 @@ Now browse to the app at `http://localhost:8000/app/index.html`.
 
 ## Directory Layout
 
-    app/                --> all of the files to be used in production
-      css/              --> css files
-        app.css         --> default stylesheet
-      img/              --> image files
-      index.html        --> app layout file (the main html template file of the app)
-      index-async.html  --> just like index.html, but loads js files asynchronously
-      js/               --> javascript files
-        app.js          --> application
-        controllers.js  --> application controllers
-        directives.js   --> application directives
-        filters.js      --> custom angular filters
-        services.js     --> custom angular services
-      partials/             --> angular view partials (partial html templates)
-        partial1.html
-        partial2.html
-
-    test/               --> test config and source files
-      protractor-conf.js    --> config file for running e2e tests with Protractor
-      e2e/                  --> end-to-end specs
-        scenarios.js
-      karma.conf.js         --> config file for running unit tests with Karma
-      unit/                 --> unit level specs/tests
-        controllersSpec.js      --> specs for controllers
-        directivessSpec.js      --> specs for directives
-        filtersSpec.js          --> specs for filters
-        servicesSpec.js         --> specs for services
-
+```
+app/                    --> all of the source files for the application
+  app.css               --> default stylesheet
+  components/           --> all app specific modules
+    version/              --> version related components
+      version.js                 --> version module declaration and basic "version" value service
+      version_test.js            --> "version" value service tests
+      version-directive.js       --> custom directive that returns the current app version
+      version-directive_test.js  --> version directive tests
+      interpolate-filter.js      --> custom interpolation filter
+      interpolate-filter_test.js --> interpolate filter tests
+  view1/                --> the view1 view template and logic
+    view1.html            --> the partial template
+    view1.js              --> the controller logic
+    view1_test.js         --> tests of the controller
+  view2/                --> the view2 view template and logic
+    view2.html            --> the partial template
+    view2.js              --> the controller logic
+    view2_test.js         --> tests of the controller
+  app.js                --> main application module
+  index.html            --> app layout file (the main html template file of the app)
+  index-async.html      --> just like index.html, but loads js files asynchronously
+karma.conf.js         --> config file for running unit tests with Karma
+e2e-tests/            --> end-to-end tests
+  protractor-conf.js    --> Protractor config file
+  scenarios.js          --> end-to-end scenarios to be run by Protractor
+```
 
 ## Testing
 
@@ -198,8 +150,8 @@ The angular-seed app comes preconfigured with unit tests. These are written in
 [Jasmine][jasmine], which we run with the [Karma Test Runner][karma]. We provide a Karma
 configuration file to run them.
 
-* the configuration is found at `test/karma.conf.js`
-* the unit tests are found in `test/unit/`.
+* the configuration is found at `karma.conf.js`
+* the unit tests are found next to the code they are testing and are named as `..._test.js`.
 
 The easiest way to run the unit tests is to use the supplied npm script:
 
@@ -227,8 +179,8 @@ The angular-seed app comes with end-to-end tests, again written in [Jasmine][jas
 are run with the [Protractor][protractor] End-to-End test runner.  It uses native events and has
 special features for Angular applications.
 
-* the configuration is found at `test/protractor-conf.js`
-* the end-to-end tests are found in `test/e2e/`
+* the configuration is found at `e2e-tests/protractor-conf.js`
+* the end-to-end tests are found in `e2e-tests/scenarios.js`
 
 Protractor simulates interaction with our web app and verifies that the application responds
 correctly. Therefore, our web server needs to be serving up the application, so that Protractor
@@ -319,7 +271,7 @@ Then you can start your own development web server to serve static files from a 
 running:
 
 ```
-http-server
+http-server -a localhost -p 8000
 ```
 
 Alternatively, you can choose to configure your own webserver, such as apache or nginx. Just
@@ -328,7 +280,7 @@ configure your server to serve the files under the `app/` directory.
 
 ### Running the App in Production
 
-This really depends on how complex is your app and the overall infrastructure of your system, but
+This really depends on how complex your app is and the overall infrastructure of your system, but
 the general rule is that all you need in production are all the files under the `app/` directory.
 Everything else should be omitted.
 
@@ -373,7 +325,7 @@ For more information on AngularJS please check out http://angularjs.org/
 [npm]: https://www.npmjs.org/
 [node]: http://nodejs.org
 [protractor]: https://github.com/angular/protractor
-[jasmine]: http://pivotal.github.com/jasmine/
+[jasmine]: http://jasmine.github.io
 [karma]: http://karma-runner.github.io
 [travis]: https://travis-ci.org/
 [http-server]: https://github.com/nodeapps/http-server

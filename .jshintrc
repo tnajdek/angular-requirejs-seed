@@ -1,6 +1,9 @@
 {
   "globalstrict": true,
-  "globals": {
-    "angular": false
-  }
+  "browser": true,
+  "predef": [
+    "require",
+    "define",
+    "notify"
+  ]
 }
