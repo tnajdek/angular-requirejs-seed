@@ -1,23 +1,17 @@
 {
-  "name": "angular-requirejs-seed",
-  "description": "AngularJS seed project modified for requireJS support.",
-  "version": "0.2.0",
-  "homepage": "https://github.com/tnajdek/angular-requirejs-seed",
+  "name": "angular-seed",
+  "description": "A starter project for AngularJS",
+  "version": "0.0.0",
+  "homepage": "https://github.com/angular/angular-seed",
   "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
+  "private": true,
   "dependencies": {
-    "angular": "~1.3.11",
-    "angular-route": "~1.3.11",
-    "angular-scenario": "~1.3.11",
-    "angular-mocks": "~1.3.11",
-    "requirejs": "~2.1.15",
+    "angular": "1.2.x",
+    "angular-route": "1.2.x",
+    "angular-loader": "1.2.x",
+    "angular-mocks": "~1.2.x",
+    "html5-boilerplate": "~4.3.0",
     "requirejs-text": "~2.0.13",
-    "html5-boilerplate": "~4.3.0"
+    "requirejs": "~2.1.15"
   }
 }

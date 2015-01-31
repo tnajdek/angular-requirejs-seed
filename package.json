@@ -1,32 +1,28 @@
 {
-  "name": "angular-requirejs-seed",
+  "name": "angular-seed",
+  "private": true,
   "version": "0.2.0",
-  "description": "AngularJS seed project modified for requireJS support.",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/tnajdek/angular-requirejs-seed.git"
-  },
+  "description": "A starter project for AngularJS paired with RequireJS",
+  "repository": "https://github.com/tnajdek/angular-requirejs-seed",
   "license": "MIT",
-  "directories": {
-    "test": "test"
+  "devDependencies": {
+    "bower": "^1.3.1",
+    "http-server": "^0.6.1",
+    "karma": "~0.10",
+    "karma-junit-reporter": "^0.2.2",
+    "protractor": "^1.1.1",
+    "shelljs": "^0.2.6"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Tom Najdek <tom@doppnet.com>",
-  "readmeFilename": "README.md",
-  "gitHead": "22263bfe493ebc74437c80fc4b4d37c24d1aa6f4",
-  "devDependencies": {
-    "jasmine-core": "^2.1.3",
-    "karma": ">=0.10.4",
-    "karma-chrome-launcher": "^0.1.7",
-    "karma-coffee-preprocessor": "~0.2.0",
-    "karma-firefox-launcher": "~0.1.0",
-    "karma-html2js-preprocessor": "~0.1.0",
-    "karma-jasmine": "^0.3.5",
-    "karma-ng-scenario": "~0.1.0",
-    "karma-phantomjs-launcher": "~0.1.0",
-    "karma-requirejs": "~0.2.0",
-    "karma-script-launcher": "~0.1.0"
+    "postinstall": "bower install",
+    "prestart": "npm install",
+    "start": "http-server -a localhost -p 8000 -c-1 app",
+    "pretest": "npm install",
+    "test": "karma start karma.conf.js",
+    "test-single-run": "karma start karma.conf.js  --single-run",
+    "preupdate-webdriver": "npm install",
+    "update-webdriver": "webdriver-manager update",
+    "preprotractor": "npm run update-webdriver",
+    "protractor": "protractor e2e-tests/protractor.conf.js"
   }
 }
