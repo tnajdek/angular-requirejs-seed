@@ -1,3 +1,4 @@
+/* global describe, it, expect, beforeEach, afterEach, module, inject, browser, element, by */
 'use strict';
 
 /* https://github.com/angular/protractor/blob/master/docs/toc.md */
@@ -38,5 +39,9 @@ describe('my app', function() {
         toMatch(/partial for view 2/);
     });
 
+    it('should fire View2Ctrl when user navigates to /view2', function() {
+      expect(element.all(by.css('[ng-view] p:nth-child(2)')).first().getText()).
+        toMatch(/hey this is ctrl2/);
+    });
   });
 });
