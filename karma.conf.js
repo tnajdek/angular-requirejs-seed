@@ -1,3 +1,6 @@
+/* global module */
+"use strict";
+
 module.exports = function(config){
   config.set({
 
@@ -7,11 +10,10 @@ module.exports = function(config){
       {pattern: 'app/bower_components/angular/angular.js', included: false},
       {pattern: 'app/bower_components/angular-route/angular-route.js', included: false},
       {pattern: 'app/bower_components/angular-mocks/angular-mocks.js', included: false},
-      // 'app/components/**/*.spec.js',
-      // 'app/view*/**/*.spec.js',
       {pattern: 'app/components/**/*.js', included: false},
       {pattern: 'app/view*/**/*.js', included: false},
       {pattern: 'app/app.js', included: false},
+      // needs to be last http://karma-runner.github.io/0.12/plus/requirejs.html
       'app/require-config.js'
     ],
 
