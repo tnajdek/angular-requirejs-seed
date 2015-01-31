@@ -1,8 +1,8 @@
 {
-  "name": "angular-seed",
+  "name": "angular-requirejs-seed",
   "private": true,
-  "version": "0.2.0",
-  "description": "A starter project for AngularJS paired with RequireJS",
+  "version": "0.3.0",
+  "description": "AngularJS seed project modified for RequireJS support.",
   "repository": "https://github.com/tnajdek/angular-requirejs-seed",
   "license": "MIT",
   "devDependencies": {
