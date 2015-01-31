@@ -11,7 +11,7 @@ define([
 		});
 	}])
 	.controller('View1Ctrl', [function() {
-
+		
 	}]);
 });
 

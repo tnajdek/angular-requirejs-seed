@@ -4,16 +4,20 @@ module.exports = function(config){
     basePath : './',
 
     files : [
-      'app/bower_components/angular/angular.js',
-      'app/bower_components/angular-route/angular-route.js',
-      'app/bower_components/angular-mocks/angular-mocks.js',
-      'app/components/**/*.js',
-      'app/view*/**/*.js'
+      {pattern: 'app/bower_components/angular/angular.js', included: false},
+      {pattern: 'app/bower_components/angular-route/angular-route.js', included: false},
+      {pattern: 'app/bower_components/angular-mocks/angular-mocks.js', included: false},
+      // 'app/components/**/*.spec.js',
+      // 'app/view*/**/*.spec.js',
+      {pattern: 'app/components/**/*.js', included: false},
+      {pattern: 'app/view*/**/*.js', included: false},
+      {pattern: 'app/app.js', included: false},
+      'app/require-config.js'
     ],
 
     autoWatch : true,
 
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine', 'requirejs'],
 
     browsers : ['Chrome'],
 
@@ -21,6 +25,7 @@ module.exports = function(config){
             'karma-chrome-launcher',
             'karma-firefox-launcher',
             'karma-jasmine',
+            'karma-requirejs',
             'karma-junit-reporter'
             ],
 
