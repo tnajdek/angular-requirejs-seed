@@ -8,7 +8,3 @@ define(['angular', 'components/version/version-directive', 'components/version/i
 		])
 		.value('version', '0.1');
 });
-
-
-
-

@@ -5,14 +5,14 @@ if(window.__karma__) {
 	var TEST_REGEXP = /spec\.js$/;
 
 	var pathToModule = function(path) {
-	  return path.replace(/^\/base\/app\//, '').replace(/\.js$/, '');
+		return path.replace(/^\/base\/app\//, '').replace(/\.js$/, '');
 	};
 
 	Object.keys(window.__karma__.files).forEach(function(file) {
-	  if (TEST_REGEXP.test(file)) {
-	    // Normalize paths to RequireJS module names.
-	    allTestFiles.push(pathToModule(file));
-	  }
+		if (TEST_REGEXP.test(file)) {
+			// Normalize paths to RequireJS module names.
+			allTestFiles.push(pathToModule(file));
+		}
 	});
 }
 
