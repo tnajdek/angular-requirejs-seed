@@ -7,8 +7,9 @@ This is a fork of [Angular Seed](https://github.com/angular/angular-seed) but wi
 * Full support for unit tests using Karma
 * Full support for e2e tests using Protractor
 
-## Changes 
+## Changes & Notes
 
+* Removed `index-async.html` and all the related logic & tasks. Original seed project offers a way to asynchroneusly load initial set of js files using a custom loader.
 * Bootstraping file (`require-config.js`) is used for both unit testing and bootstraping on the actual page. If you don't plan to build your sources using `r.js`, you should consider removing logic related to Karma before using this file in production. 
 
 ## Installation
