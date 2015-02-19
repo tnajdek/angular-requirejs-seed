@@ -1,6 +1,7 @@
 {
   "globalstrict": true,
   "browser": true,
+  "jasmine": true,
   "predef": [
     "require",
     "define",

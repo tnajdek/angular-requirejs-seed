@@ -1,4 +1,4 @@
-/* global describe, it, expect, beforeEach, afterEach, module, inject */
+/*global module, inject */
 'use strict';
 
 define(['app', 'angularMocks'], function(app) {
