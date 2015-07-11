@@ -13,6 +13,7 @@ module.exports = function(config){
       {pattern: 'app/components/**/*.js', included: false},
       {pattern: 'app/view*/**/*.js', included: false},
       {pattern: 'app/app.js', included: false},
+      {pattern: 'test/unit/**/*.js', included: true},
       // needs to be last http://karma-runner.github.io/0.12/plus/requirejs.html
       'app/require-config.js'
     ],
@@ -34,7 +35,9 @@ module.exports = function(config){
     junitReporter : {
       outputFile: 'test_out/unit.xml',
       suite: 'unit'
-    }
+    },
+
+        logLevel: config.LOG_DEBUG,
 
   });
 };
